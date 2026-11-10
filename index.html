@@ -855,7 +855,6 @@
         }
       }
 
-      /* Contact-only additions: keep the original portfolio styling intact */
       .contact-details .contact-link {
         display: inline-flex;
         align-items: center;
@@ -1337,7 +1336,6 @@
       </div>
     </footer>
     <script>
-      // Mobile navigation
       const menuToggle = document.getElementById("menuToggle");
       const navLinks = document.getElementById("navLinks");
       menuToggle.addEventListener("click", () => {
@@ -1353,7 +1351,6 @@
         }),
       );
 
-      // Theme switcher
       const themeToggle = document.getElementById("themeToggle");
       if (localStorage.getItem("portfolio-theme") === "light") {
         document.body.classList.add("light-theme");
@@ -1366,7 +1363,6 @@
         localStorage.setItem("portfolio-theme", light ? "light" : "dark");
       });
 
-      // Profile photo preview
       document
         .getElementById("photoUpload")
         .addEventListener("change", (event) => {
@@ -1382,7 +1378,6 @@
           reader.readAsDataURL(file);
         });
 
-      // Scroll reveal
       const revealObserver = new IntersectionObserver(
         (entries) =>
           entries.forEach((entry) => {
@@ -1397,7 +1392,6 @@
         .querySelectorAll(".reveal")
         .forEach((el) => revealObserver.observe(el));
 
-      // Active navigation
       const sectionObserver = new IntersectionObserver(
         (entries) =>
           entries.forEach((entry) => {
@@ -1417,12 +1411,7 @@
         .querySelectorAll("main section[id]")
         .forEach((section) => sectionObserver.observe(section));
 
-      // =====================================================
-      // CUSTOMIZE YOUR CONTACT DETAILS HERE
-      // Replace these sample values with your real details.
-      // The form uses FormSubmit; no private server is required.
-      // On first use, FormSubmit sends a verification email to you.
-      // =====================================================
+      
       const CONTACT_INFO = {
         email: "sufiyanhasen12@gmail.com",
         phone: "+251908667768", // Use international format
@@ -1436,7 +1425,6 @@
         },
       };
 
-      // Update the email and phone links from the settings above.
       const emailLink = document.querySelector('[data-contact="email"]');
       const phoneLink = document.querySelector('[data-contact="phone"]');
 
@@ -1451,7 +1439,6 @@
           CONTACT_INFO.phone;
       }
 
-      // Update each social profile link.
       document.querySelectorAll("[data-social]").forEach((link) => {
         const platform = link.dataset.social;
         const url = CONTACT_INFO.socials[platform];
